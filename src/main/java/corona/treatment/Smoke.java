@@ -2,9 +2,9 @@ package corona.treatment;
 
 import corona.model.Patient;
 
-public class Дым implements Лечение{
+public class Smoke implements ITreatment {
     @Override
-    public void применить(Patient patient) {
+    public void apply(Patient patient) {
         System.out.println("нюхать дым, стучать в барабан до полного исцеления");
     }
 }

@@ -2,9 +2,10 @@ package corona.treatment;
 
 import corona.model.Patient;
 
-public class Аспирин implements Лечение{
+@Treatment
+public class Aspirin implements ITreatment {
     @Override
-    public void применить(Patient patient) {
+    public void apply(Patient patient) {
         System.out.println("Принимать аспирин три раза в день после еды");
     }
 }

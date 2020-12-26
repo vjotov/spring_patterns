@@ -14,5 +14,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Qualifier
 @Autowired
 public @interface Treatment {
-    String type();
+    String type() default "[unassigned]";
 }

@@ -26,7 +26,7 @@ public class InjectListBPP implements BeanPostProcessor {
         for(Field field: allFields){
             InjectList annotation = field.getAnnotation((InjectList.class));
             List<Object> list = Arrays.stream(annotation.value())
-                    .map(aClass -> Introspector.decapitalize(aClass.getName()))
+                    .map(aClass -> Introspector.decapitalize(aClass.getSimpleName()))
                     .map(name -> context.getBean(name))
                     .collect(Collectors.toList());
             field.setAccessible(true);

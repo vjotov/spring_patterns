@@ -2,22 +2,23 @@ package corona.doctors;
 
 import corona.InjectList;
 import corona.model.Patient;
-import corona.treatment.Баня;
-import corona.treatment.Водка;
-import corona.treatment.Лечение;
+import corona.treatment.Bath;
+import corona.treatment.Vodka;
+import corona.treatment.ITreatment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
-public class Знахарь implements Целитель {
+public class Medicaster implements Healer {
     @Autowired
-    @InjectList({Водка.class, Баня.class})
-    private List<Лечение> личениеs;
+    @InjectList({Vodka.class, Bath.class})
+    private List<ITreatment> treatments;
 
     @Override
-    public void исцелять(Patient patient) {
+    public void heal(Patient patient) {
         System.out.println("определяю лечение...");
+        treatments.forEach(treatment -> treatment.apply(patient));
     }
 }
