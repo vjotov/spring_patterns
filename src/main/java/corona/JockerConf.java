@@ -1,14 +1,8 @@
 package corona;
 
-import corona.doctors.Healer;
+import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-
-import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 @Configuration
 //@Import(LegacyBeanDefinitionRegistrar.class)
@@ -23,5 +17,20 @@ public class JockerConf {
     @Bean
     public InjectListBPP injectListBPP() {
         return new InjectListBPP();
+    }
+
+    @Bean
+    public CustomPointCut customPointCut() {
+        return new CustomPointCut();
+    }
+
+    @Bean
+    public ExceptionHandlerAspect exceptionHandlerAspect() {
+        return new ExceptionHandlerAspect();
+    }
+
+    @Bean
+    public DefaultPointcutAdvisor advisor() {
+        return new DefaultPointcutAdvisor(customPointCut() , exceptionHandlerAspect());
     }
 }

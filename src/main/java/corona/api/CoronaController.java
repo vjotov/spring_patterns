@@ -3,9 +3,7 @@ package corona.api;
 import corona.model.Patient;
 import corona.model.PatientStatus;
 import corona.services.Hospital;
-import corona.services.PSRService;
-import lombok.SneakyThrows;
-import org.springframework.beans.factory.annotation.Autowired;
+import corona.services.pcr.PSRService;
 import org.springframework.web.bind.annotation.*;
 
 import static java.time.LocalDateTime.now;

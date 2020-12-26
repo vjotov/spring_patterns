@@ -1,4 +1,4 @@
-package corona.services;
+package corona.services.pcr;
 
 import corona.model.Papaya;
 import org.springframework.stereotype.Service;
