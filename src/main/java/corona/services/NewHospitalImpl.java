@@ -6,6 +6,7 @@ import corona.model.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -15,11 +16,16 @@ import java.util.stream.Collectors;
 public class NewHospitalImpl implements Hospital {
     //    @Autowired
     // solution 2 - bean is in the configuration
-    private Map<String, Healer> map;
+    private Map<String, Healer> map = new HashMap<>();
 
     // solution 1 - creating in the constructor
-    public NewHospitalImpl(List<Healer> healers) {
-        map = healers.stream().collect(Collectors.toMap(Healer::myType, Function.identity()));
+//    public NewHospitalImpl(List<Healer> healers) {
+//        map = healers.stream().collect(Collectors.toMap(Healer::myType, Function.identity()));
+//    }
+    @Override
+    public void register(String key, Healer healer){
+        map.put(key, healer);
+
     }
 
     @Override

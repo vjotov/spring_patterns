@@ -33,4 +33,9 @@ public class HospitalImpl implements Hospital {
                 defaultHealer.heal(patient);
         }
     }
+
+    @Override
+    public void register(String key, Healer healer) {
+
+    }
 }

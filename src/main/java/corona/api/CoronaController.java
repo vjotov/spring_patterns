@@ -24,10 +24,5 @@ public class CoronaController {
         return patient;
     }
 
-    // registering bean on the fly
-    @SneakyThrows
-    @PostMapping("/regbean")
-    public String regBean(@RequestBody BeanMD beanMD) {
-        return "registered";
-    }
+
 }
