@@ -1,10 +1,10 @@
 package corona.treatment;
 
-import corona.Patient;
+import corona.model.Patient;
 
-public class Банки implements Лечение{
+public class Банки implements Лечение {
     @Override
     public void применить(Patient patient) {
-        System.out.println("100 грамм водки внутрь, три раза в день");
+        System.out.println("12 банок, присосать к спине на пол часа перед сном");
     }
 }
