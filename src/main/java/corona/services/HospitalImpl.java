@@ -6,14 +6,17 @@ import corona.doctors.Medicaster;
 import corona.doctors.Healer;
 import corona.model.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 public class HospitalImpl implements Hospital {
     @Autowired
-    private Medicaster знахарь;
+    @Lazy
+    private Medicaster medicaster;
     @Autowired
-    private Doctor врач;
+    @Lazy
+    private Doctor doctor;
     @Autowired
     private DefaultHealer defaultHealer;
 
@@ -21,10 +24,10 @@ public class HospitalImpl implements Hospital {
     public void processPatient(Patient patient) {
         switch (patient.getMethod()) {
             case Healer.TRADITIONAL:
-                врач.heal(patient);
+                doctor.heal(patient);
                 break;
             case Healer.FOLK:
-                знахарь.heal(patient);
+                medicaster.heal(patient);
                 break;
             default:
                 defaultHealer.heal(patient);

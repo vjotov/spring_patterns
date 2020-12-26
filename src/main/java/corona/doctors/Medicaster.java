@@ -21,4 +21,9 @@ public class Medicaster implements Healer {
         System.out.println("определяю лечение...");
         treatments.forEach(treatment -> treatment.apply(patient));
     }
+
+    @Override
+    public String myType() {
+        return Healer.FOLK;
+    }
 }

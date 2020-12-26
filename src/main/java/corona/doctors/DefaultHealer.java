@@ -17,6 +17,12 @@ public class DefaultHealer implements Healer {
 
     @Override
     public void heal(Patient patient) {
-        allTreatments.get(random.nextInt(allTreatments.size())).apply(patient);
+//        allTreatments.get(random.nextInt(allTreatments.size())).apply(patient);
+        System.out.println("Само пройдет");
+    }
+
+    @Override
+    public String myType() {
+        return "default";
     }
 }
