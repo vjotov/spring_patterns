@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import static java.time.LocalDateTime.now;
 
-@RestController
+@corona.CoronaController
 @RequestMapping("/corona/")
 public class CoronaController {
     private final Hospital hospital;

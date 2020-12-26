@@ -33,4 +33,9 @@ public class JockerConf {
     public DefaultPointcutAdvisor advisor() {
         return new DefaultPointcutAdvisor(customPointCut() , exceptionHandlerAspect());
     }
+
+    @Bean
+    public CoronaControllerAdvice advice(){
+        return new CoronaControllerAdvice();
+    }
 }
