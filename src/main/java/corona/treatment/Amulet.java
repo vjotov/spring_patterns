@@ -2,6 +2,7 @@ package corona.treatment;
 
 import corona.model.Patient;
 
+@Treatment
 public class Amulet implements ITreatment {
     @Override
     public void apply(Patient patient) {
